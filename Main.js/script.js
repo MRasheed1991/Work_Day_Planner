@@ -1,10 +1,14 @@
-var timeDisplayEl = $("#time-display");
+// var timeDisplayEl = $("#time-display");
 
 // handle displaying the time
-function displayTime() {
-  var rightNow = moment().format("MMM DD, YYYY");
-  timeDisplayEl.text(rightNow);
-  console.log(moment());
-}
+// const currentTime = () => {
+//   const rightNow = moment().format("MMM DD, YYYY");
+//   $("#time-display").text(rightNow);
+//   return rightNow;
+// };
 
-displayTime();
+const getCurrentDate = () => {
+  const currentDate = moment().format("dddd Do MMMM");
+  $("#currentDay").text(currentDate);
+  return currentDate;
+};
