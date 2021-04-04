@@ -23,6 +23,8 @@ const renderTextArea = () => {
     timeBlockArray.each(callback);
   }
 };
-const onload = () => {};
+const onload = () => {
+  renderTextArea();
+};
 
 $(document).ready(onload);
