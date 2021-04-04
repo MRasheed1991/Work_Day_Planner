@@ -12,12 +12,17 @@ setInterval(getCurrentDate, 1000);
 
 const renderTextArea = () => {
   const plannerEvents = JSON.parse(localStorage.getItem("plannerEvents"));
+
   if (plannerEvents !== null) {
     const getTheCurrentHour = moment().hour();
     const timeBlockArray = $(".container .row");
-    function callback() {
+    // the folllowing is declared as function
+    const callback = function () {
       const textArea = $(this).find("textarea");
+
+      // const time = parseInt($(this).data("time"), 10);
       const time = parseInt($(this).data("time"));
+
       if (time === getTheCurrentHour) {
         textArea.removeClass("past").addClass("present");
       } else if (time > getTheCurrentHour) {
@@ -25,7 +30,7 @@ const renderTextArea = () => {
       }
       const plannedEvent = plannerEvents[time];
       $(this).find("textarea").text(plannedEvent);
-    }
+    };
     timeBlockArray.each(callback);
   } else {
     localStorage.setItem("plannerEvents", JSON.stringify({}));
@@ -53,8 +58,8 @@ const onclick = function (event) {
 
 const onload = () => {
   getCurrentDate();
-  colorCodeBlock();
+  renderTextArea();
   $(".container").click(onClick);
 };
 
-$(document).ready(onload);
+$(window).ready(onload);
