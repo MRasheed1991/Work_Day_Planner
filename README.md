@@ -3,7 +3,7 @@
 - [Project LInk](https://github.com/MRasheed1991/Work_Day_Planner/blob/master/README.md#project-link)
 - [About This Project](https://github.com/MRasheed1991/Work_Day_Planner/blob/master/README.md#about-the-project)
 
-* [screenshot]
+* [screenshot](https://github.com/MRasheed1991/Work_Day_Planner#screenshots)
 
 ## Project LInk
 
@@ -25,6 +25,6 @@ The Task was to create a Day Planner using the jQuery and moment.js.
 
 ## ScreenShots
 
-/assets/screenshots/Screenshot-1.png
-/assets/screenshots/Screenshot-2.png
-/assets/screenshots/Screenshot-3.png
+![Screenshot (1)](./assets/screenshots/Screenshot-1.png)
+![Screenshot (2)](./assets/screenshots/Screenshot-2.png)
+![Screenshot (3)](./assets/screenshots/Screenshot-3.png)
