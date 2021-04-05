@@ -4,7 +4,7 @@ const getCurrentDate = () => {
   $("#currentDay").text(currentDate);
 };
 
-// using setinterval for the clock second to repeat everysecond
+// using setinterval for the clock to refresh everysecond
 setInterval(getCurrentDate, 1000);
 
 const colorCodeBlock = () => {
@@ -12,6 +12,7 @@ const colorCodeBlock = () => {
 };
 
 const renderTextArea = () => {
+  //fetches data from local storage
   const plannerEvents = JSON.parse(localStorage.getItem("plannerEvents"));
 
   if (plannerEvents !== null) {
@@ -34,15 +35,16 @@ const renderTextArea = () => {
     };
     timeBlockArray.each(callback);
   } else {
+    //add empty array in local storage
     localStorage.setItem("plannerEvents", JSON.stringify({}));
   }
 };
 
-const onclick = function (event) {
+const onClick = function (event) {
   const plannerEvents = JSON.parse(localStorage.getItem("plannerEvents"));
   const target = $(event.target);
   //this stops event bubbling
-  if (target.is("button")) {
+  if (target.is("button") || target.is("i")) {
     const key = target.attr("id");
     const value = target.parent().find("textarea").val();
 
@@ -56,11 +58,11 @@ const onclick = function (event) {
     localStorage.setItem("plannerEvents", JSON.stringify(filledScheduleObject));
   }
 };
-
-const onload = () => {
+//declaring a function in a onLoad var to call different function when the page is loaded
+const onLoad = () => {
   getCurrentDate();
   renderTextArea();
   $(".container").click(onClick);
 };
-
-$(window).ready(onload);
+// run the code when page is ready or Loaded
+$(window).ready(onLoad);

@@ -22,3 +22,9 @@ The Task was to create a Day Planner using the jQuery and moment.js.
 - The input text can be saved into the local storage.
 - When the page is refreshed, the stored text can still be seen on the page.
 - A timer has also been added to check the time every minute and then update the color coded bars accordingly.
+
+## ScreenShots
+
+/assets/screenshots/Screenshot-1.png
+/assets/screenshots/Screenshot-2.png
+/assets/screenshots/Screenshot-3.png
