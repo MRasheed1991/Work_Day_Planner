@@ -1,14 +1,15 @@
+//following function to get the current date and time
 const getCurrentDate = () => {
   const currentDate = moment().format("dddd, Do of MMMM YYYY, h:mm:ss");
   $("#currentDay").text(currentDate);
 };
 
+// using setinterval for the clock second to repeat everysecond
+setInterval(getCurrentDate, 1000);
+
 const colorCodeBlock = () => {
   text.each(setcolor);
 };
-
-// using setinterval for the clock second to repeat everysecond
-setInterval(getCurrentDate, 1000);
 
 const renderTextArea = () => {
   const plannerEvents = JSON.parse(localStorage.getItem("plannerEvents"));
@@ -16,11 +17,11 @@ const renderTextArea = () => {
   if (plannerEvents !== null) {
     const getTheCurrentHour = moment().hour();
     const timeBlockArray = $(".container .row");
-    // the folllowing is declared as function
+
     const callback = function () {
+      //get data-time value from row
       const textArea = $(this).find("textarea");
 
-      // const time = parseInt($(this).data("time"), 10);
       const time = parseInt($(this).data("time"));
 
       if (time === getTheCurrentHour) {
